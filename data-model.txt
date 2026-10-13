@@ -1,0 +1,13 @@
+users
+  name:string [present, unique, length(3-20)]
+  email:string [present, unique, format]
+  password:string [present, length(8+)]
+
+  has_many posts
+
+posts
+  title:string [present, unique, length(<=150)]
+  body:text [present, length(<=2500)]
+  user_id:integer [present]
+
+  belongs_to user
