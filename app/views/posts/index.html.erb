@@ -5,6 +5,9 @@
 <ul>
   <% @posts.each do |post| %>
     <li>
+      <% if user_signed_in? %>
+        <p>post.user.name</p>
+      <% end %>
       <%= link_to post.title, post_path(post.id) %>
     </li>
   <% end %>
